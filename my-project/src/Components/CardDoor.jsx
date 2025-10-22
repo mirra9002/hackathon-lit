@@ -1,6 +1,8 @@
-export default function CardDoor({ title, description, imgSource }) {
+import { useNavigate } from "react-router-dom";
+export default function CardDoor({ title, description, imgSource, handleClick }) {
+
   return (
-    <div className="cursor-pointer">
+    <div className="cursor-pointer" onClick={handleClick}>
       <div className=" bg-white border border-gray-200 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
       <img
         src={imgSource}

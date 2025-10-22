@@ -1,24 +1,40 @@
 import CardDoor from '../Components/CardDoor.jsx';
 import { quests } from '../data.js';
-import paperBg from '../assets/old-paper-bg.jpg';
-import paperBg2 from '../assets/paper-bg.jpg';
-
-import kyivskaRus from '../assets/kyivska-rus-main1.png'
-import HalKniaz from '../assets/hal-kniaz-main2.png'
+import { useNavigate } from 'react-router-dom';
 
 export default function MainPage() {
+  const navigate = useNavigate()
+  const navigationQuestMap = {
+    "Київська Русь": "/kyivska-rus",
+    "Галицько-Волинське князівство": '/halytsko-volynske-kniazivstvo',
+    "Козацька доба": '/kozatska-doba',
+    'Розквіт писемництва XVIII ст.': "/rozkvit-pysmennytstva",
+    "Друга світова війна": '/druha-svitova-viyna',
+    "Незалежність України": '/nezaleznist-ukrainy'
+  }
+  function navigateToQuest(questTitle) {
 
-  console.log(window)
-  const userWindowWidth = window.outerWidth
-  const userWindowHeight = window.outerHeight
-  document.body.style.paperBg2
-  //e4ccab
+    console.log(questTitle)
+    const navigationLocation = navigationQuestMap[questTitle]
+    console.log(navigationLocation)
+    navigate(navigationLocation)
+  }
   return (
     <div className="min-h-screen w-full bg-[#EEDEC7] overflow-auto text-center"> 
 
-      <h1 className="mb-12 mt-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
+      <h1 className="mb-12 mt-8 mx-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
         Квест з історії України
       </h1>
+
+      
+      <p class="mb-6 text-lg mx-12 text-center rtl:text-right text-gray-700">
+        Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.
+        Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.
+        </p>
+
+      <h2 className="mb-12 mt-8 mx-4 text-4xl font-bold leading-none tracking-tight text-gray-900">
+          Теми
+      </h2>
 
       <div className="relative flex flex-col items-center w-full py-10">
         {/* Центральна вертикальна лінія */}
@@ -51,6 +67,7 @@ export default function MainPage() {
                 title={quest.title}
                 description={quest.description}
                 imgSource={quest.imageUrl || 'https://picsum.photos/600/400'}
+                handleClick={() => navigateToQuest(quest.title)}
               />
             </div>
           </div>
