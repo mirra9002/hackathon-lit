@@ -27,15 +27,15 @@ export default function MainPage() {
         {quests.map((quest, index) => (
           <div
             key={index}
-            className={`flex w-full md:w-3/4 items-center relative ${
+            className={`flex w-full md:w-3/4 items-center relative mb-8 md:mb-0 ${
               index % 2 === 0
-                ? 'justify-start pr-20 '
-                : 'justify-end pl-20 -mt-80'
+                ? 'md:justify-start md:pr-20'
+                : 'md:justify-end md:pl-20'
             }`}
           >
             {/* Горизонтальна лінія */}
             <div
-              className={`absolute top-1/2 h-[3px] w-1 bg-[#ac9677] ${
+              className={`hidden md:block absolute top-1/2 h-[3px] w-1 bg-[#ac9677] ${
                 index % 2 === 0
                   ? 'right-1/2 w-[200px] translate-x-[2px]'
                   : 'left-1/2 w-[200px] -translate-x-[2px]'
@@ -46,7 +46,7 @@ export default function MainPage() {
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#b54405] rounded-full border-4 border-white shadow"></div>
 
             {/* Картка */}
-            <div className="relative w-full md:w-1/2">
+            <div className="relative w-full px-4 md:w-1/2">
               <CardDoor
                 title={quest.title}
                 description={quest.description}
