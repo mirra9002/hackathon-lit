@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import MainPage from './Pages/MainPage.jsx';
 import KyivRus from './Pages/KyivRus.jsx';
+import MapQuest1 from './Pages/MapQuest1.jsx';
 
 const router = createBrowserRouter([{
     path: '/',
