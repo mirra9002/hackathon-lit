@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom';
 export default function MainPage() {
   const navigate = useNavigate()
   const navigationQuestMap = {
-    "Київська Русь": "/quest/kyivska-rus", 
-    "Галицько-Волинське князівство": '/quest/galytsko-volynske-kniazivstvo', 
-    "Козацька доба": '/quest/kozatska-doba',
+    "Київська Русь": "https://history-quest-kr.web.app", 
+    "Галицько-Волинське князівство": 'https://history-quest-gvk.web.app', 
+    "Козацька доба": 'https://history-quest-kd.web.app',
     'Розквіт писемництва XVIII ст.': "/rozkvit-pysmennytstva",
     "Друга світова війна": '/druha-svitova-viyna',
     "Незалежність України": '/nezaleznist-ukrainy'
@@ -17,7 +17,7 @@ export default function MainPage() {
     console.log(questTitle)
     const navigationLocation = navigationQuestMap[questTitle]
     console.log(navigationLocation)
-    navigate(navigationLocation)
+    open(navigationLocation)
   }
   return (
     <div className="min-h-screen w-full bg-[#EEDEC7] overflow-auto text-center"> 
@@ -67,6 +67,7 @@ export default function MainPage() {
                 title={quest.title}
                 description={quest.description}
                 imgSource={quest.imageUrl || 'https://picsum.photos/600/400'}
+                isActive={quest.isActive}
                 handleClick={() => navigateToQuest(quest.title)}
               />
             </div>
