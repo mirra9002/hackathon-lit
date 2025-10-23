@@ -21,7 +21,7 @@ export default function KyivRus() {
       {step === 1 && (
         <HistoryTest
           question="Хто об’єднав Галичину та Волинь у 1199 році?"
-          options={["Роман Мстиславич", "Данило Романович", "Юрій-Болеслав", "Казимир III"]}
+          options={["Данило Романович", "Юрій-Болеслав", "Роман Мстиславич", "Казимир III"]}
           correctAnswer="Роман Мстиславич"
           onNext={handleNext}
         />
@@ -31,8 +31,8 @@ export default function KyivRus() {
         <HistoryTest
           question="Яка реформа підкреслювала єдність нової держави?"
           options={[
-            "Єдині суд і податок",
             "Окремі мита в кожному місті",
+            "Єдині суд і податок",
             "Запровадження латинського обряду",
             "Відмова від торгівлі з Краковом",
           ]}
@@ -45,10 +45,10 @@ export default function KyivRus() {
         <HistoryTest
           question="Чому частина бояр виступала проти Романа?"
           options={[
-            "Він скорочував їхні вотчини та вплив",
             "Він відмовився від оборони кордонів",
-            "Він підвищив мита для купців",
+            "Він скорочував їхні вотчини та вплив",
             "Він переніс столицю до Києва",
+            "Він підвищив мита для купців",
           ]}
           correctAnswer="Він скорочував їхні вотчини та вплив"
           onNext={handleNext}
@@ -59,9 +59,9 @@ export default function KyivRus() {
         <HistoryTest
           question="Яку позицію щодо віри озвучив Данило, приймаючи корону?"
           options={[
-            "Збереження православ’я",
             "Перехід на латинський обряд",
             "Змішаний обряд",
+            "Збереження православ’я",
             "Відмова від будь-якого обряду",
           ]}
           correctAnswer="Збереження православ’я"
@@ -74,8 +74,8 @@ export default function KyivRus() {
           question="Який практичний сенс Данило вбачав у короні?"
           options={[
             "Відкриття дверей для торгів і дипломатії",
-            "Лише символічна перемога",
             "Можливість не будувати укріплення",
+            "Лише символічна перемога",
             "Автоматичний прихід хрестоносців",
           ]}
           correctAnswer="Відкриття дверей для торгів і дипломатії"
@@ -89,8 +89,8 @@ export default function KyivRus() {
           options={[
             "Спиратися на власні сили",
             "Повернути корону",
-            "Залежати від сусідів",
             "Переселити населення на Захід",
+            "Залежати від сусідів",
           ]}
           correctAnswer="Спиратися на власні сили"
           onNext={handleNext}
@@ -149,7 +149,6 @@ function HistoryTest({ question, options, correctAnswer, onNext }) {
           </div>
         ))}
 
-        {/* Кнопка "Відповісти" */}
         <button
           type="submit"
           disabled={!selected}
@@ -163,7 +162,6 @@ function HistoryTest({ question, options, correctAnswer, onNext }) {
         </button>
       </form>
 
-      {/* Результат */}
       {result === "correct" && (
         <div className="text-center mt-6">
           <p className="text-green-600 text-lg font-semibold mb-4">Правильно!</p>
