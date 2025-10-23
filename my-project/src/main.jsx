@@ -6,7 +6,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import MainPage from './Pages/MainPage.jsx';
 import KyivRus from './Pages/KyivRus.jsx';
-import MapQuest1 from './Pages/MapQuest1.jsx';
+import MapQuest1 from './Pages/MapQuest1.jsx'
+import MapTest from './Pages/MapTest.jsx';
 
 const router = createBrowserRouter([{
     path: '/',
@@ -18,7 +19,7 @@ const router = createBrowserRouter([{
   },
   {
     path: '/galytsko-volynske-kniazivstvo',
-    element: <KyivRus /> // You can create separate components for each quest later
+    element: <MapTest /> // You can create separate components for each quest later
   },
   {
     path: '/kozatska-doba',
