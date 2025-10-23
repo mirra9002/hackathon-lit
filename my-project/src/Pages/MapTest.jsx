@@ -27,9 +27,9 @@ export default function MapTest() {
 
     console.log(clickPos)
     const withinX =
-        clickPos.xPercent >= 47 - 2 && clickPos.xPercent <= 47 + 5; // tolerance
+        clickPos.xPercent >= 47 - 3 && clickPos.xPercent <= 47 + 5; // tolerance
     const withinY =
-        clickPos.yPercent >= 24 - 2 && clickPos.yPercent <= 24 + 5; // 
+        clickPos.yPercent >= 24 - 3 && clickPos.yPercent <= 24 + 5; // 
 
     console.log(withinX, withinY);
 

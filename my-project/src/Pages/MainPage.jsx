@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom';
 export default function MainPage() {
   const navigate = useNavigate()
   const navigationQuestMap = {
-    "Київська Русь": "/kyivska-rus",
-    "Галицько-Волинське князівство": '/galytsko-volynske-kniazivstvo',
-    "Козацька доба": '/kozatska-doba',
+    "Київська Русь": "/quest/kyivska-rus", 
+    "Галицько-Волинське князівство": '/quest/galytsko-volynske-kniazivstvo', 
+    "Козацька доба": '/quest/kozatska-doba',
     'Розквіт писемництва XVIII ст.': "/rozkvit-pysmennytstva",
     "Друга світова війна": '/druha-svitova-viyna',
     "Незалежність України": '/nezaleznist-ukrainy'
