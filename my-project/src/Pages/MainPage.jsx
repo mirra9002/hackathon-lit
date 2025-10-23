@@ -6,7 +6,7 @@ export default function MainPage() {
   const navigate = useNavigate()
   const navigationQuestMap = {
     "Київська Русь": "/kyivska-rus",
-    "Галицько-Волинське князівство": '/halytsko-volynske-kniazivstvo',
+    "Галицько-Волинське князівство": '/galytsko-volynske-kniazivstvo',
     "Козацька доба": '/kozatska-doba',
     'Розквіт писемництва XVIII ст.': "/rozkvit-pysmennytstva",
     "Друга світова війна": '/druha-svitova-viyna',
