@@ -97,6 +97,12 @@ export default function KyivRus() {
         />
       )}
 
+    {step > 6 ? 
+      <button
+        className={`mt-4 mb-6 px-8 py-3 rounded-xl font-semibold text-white transition bg-amber-600 hover:bg-amber-700`}>
+        Повернутися назад
+      </button> :
+      <></>}
       {step > 6 && (
         <p className="mt-12 text-2xl font-semibold text-gray-800 text-center">
           🎉 Вітаємо! Ви успішно завершили розділ <span className="text-amber-700">«Київська Русь»</span>!
@@ -162,6 +168,7 @@ function HistoryTest({ question, options, correctAnswer, onNext }) {
         </button>
       </form>
 
+          
       {result === "correct" && (
         <div className="text-center mt-6">
           <p className="text-green-600 text-lg font-semibold mb-4">Правильно!</p>
