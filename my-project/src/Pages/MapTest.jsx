@@ -4,6 +4,7 @@ import mapUa from "../assets/map-ua.png";
 export default function MapTest() {
   const [clickPos, setClickPos] = useState(null);
   const [result, setResult] = useState(null);
+  const [showButtonGoBack, setShowButtonGoBack] = useState(false)
 
   // Координати Києва у відсотках від ширини та висоти зображення
   const correctXPercent = 54; // приблизно 54% від лівого краю
@@ -34,8 +35,10 @@ export default function MapTest() {
     console.log(withinX, withinY);
 
     if (withinX && withinY) {
+      setShowButtonGoBack(true)
         setResult("correct");
     } else {
+      setShowButtonGoBack(false)
         setResult("wrong");
     }
 
@@ -98,12 +101,21 @@ export default function MapTest() {
       >
         Відповісти
       </button>
+      
+      {showButtonGoBack ? 
+      <button
+        className={`mt-4 mb-6 px-8 py-3 rounded-xl font-semibold text-white transition bg-amber-600 hover:bg-amber-700`}>
+        Повернутися назад
+      </button> :
+      <></>}
+      
 
       {/* Результат */}
       {result === "correct" && (
         <p className="text-green-600 text-lg font-semibold mb-10">
           Правильно! Це Київ.
         </p>
+        
       )}
       {result === "wrong" && (
         <p className="text-red-600 text-lg font-semibold mb-10">
